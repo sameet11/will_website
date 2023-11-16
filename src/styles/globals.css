@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+  
+    /* Add a bottom border for the underline effect */
+    border-bottom: 2px solid transparent;
+  
+    /* Add a transition for smooth animation */
+    transition: border-bottom 0.3s ease;
+  
+    /* Define the hover effect */
+    &:hover {
+      border-bottom: 2px solid white; /* Change the color as needed */
+    }
+  }
+
+  .sidebar-link {
+    position: relative; /* Create a positioning context */
+    transition: all 0.3s; /* Add a smooth transition */
+  
+    /* Remove the default text decoration */
+    text-decoration: none;
+  
+    /* Define the pseudo-element for the underline */
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0; /* Initial width */
+      height: 2px; /* You can adjust the height as needed */
+      background-color: white; /* Color of the underline */
+      transition: all 0.3s; /* Add the same transition duration as the text */
+    }
+  
+    /* Apply the underline effect on hover */
+    &:hover {
+      color: white; /* Change text color on hover */
+    }
+  
+    /* Animate the pseudo-element to create the underline effect on hover */
+    &:hover::before {
+      width: 100%; /* Expand the width to create the underline */
+    }
+  }
